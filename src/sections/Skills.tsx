@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   Code2,
   Database,
-  Terminal,
   Server,
   PenTool,
   GitBranch,
@@ -78,7 +77,7 @@ const Skills: React.FC = () => {
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {skills.map((group, groupIndex) => (
+          {skills.map((group) => (
             <motion.div
               key={group.category}
               variants={containerVariants}
