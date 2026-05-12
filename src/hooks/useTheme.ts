@@ -1,28 +1,24 @@
 import { useEffect, useState } from 'react';
 
-type Theme = 'dark' | 'light';
-
 export const useTheme = () => {
-  const [theme, setTheme] = useState<Theme>(() => {
-    // Đọc từ localStorage, mặc định là 'dark'
-    return (localStorage.getItem('theme') as Theme) || 'dark';
-  });
+    // Kiểm tra nếu đã có lựa chọn trong localStorage, nếu không mặc định là 'dark'
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem('theme') || 'dark';
+    });
 
-  useEffect(() => {
-    const root = window.document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-      root.classList.remove('light');
-    } else {
-      root.classList.remove('dark');
-      root.classList.add('light');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    useEffect(() => {
+        const root = window.document.documentElement;
+        if (theme === 'dark') {
+            root.classList.add('dark');
+        } else {
+            root.classList.remove('dark');
+        }
+        localStorage.setItem('theme', theme);
+    }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
+    const toggleTheme = () => {
+        setTheme(theme === 'light' ? 'dark' : 'light');
+    };
 
-  return { theme, toggleTheme };
+    return { theme, toggleTheme };
 };

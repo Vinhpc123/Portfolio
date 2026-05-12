@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# 🚀 Modern React Portfolio - Vinh.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Một trang Portfolio cá nhân hiện đại, hiệu năng cao được xây dựng với **React 19**, **TypeScript**, và **Tailwind CSS**. Dự án tập trung vào trải nghiệm người dùng mượt mà, thiết kế Glassmorphism và khả năng tùy biến dữ liệu dễ dàng.
 
-Currently, two official plugins are available:
+![Thumbnail](./public/thumbnail.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Tính năng nổi bật
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🌓 **Dark/Light Mode:** Chuyển đổi theme mượt mà với hiệu ứng xoay icon Sun/Moon.
+- 📱 **Responsive Design:** Tối ưu hóa hiển thị trên mọi thiết bị (Mobile, Tablet, Desktop).
+- 🍱 **Bento Grid Layout:** Phần "About" được thiết kế theo phong cách Bento hiện đại.
+- 🎭 **Framer Motion:** Hiệu ứng chuyển động (animations) cao cấp, scroll reveal và hover effects.
+- 🛠️ **Centralized Data:** Quản lý toàn bộ thông tin (projects, skills, contact) tại duy nhất một file `src/data/resume.ts`.
+- ⚡ **Vite:** Tốc độ build và hot-reload cực nhanh.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Công nghệ sử dụng
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Frontend:** React 19, TypeScript
+- **Styling:** Tailwind CSS v3 (Custom Grid Background)
+- **Animation:** Framer Motion
+- **Icons:** Lucide React
+- **Build Tool:** Vite
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Hướng dẫn cài đặt
+
+Để chạy dự án này dưới máy cục bộ, hãy làm theo các bước sau:
+
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/Vinhpc123/ThanhVinh-portfolio.git
+   cd ThanhVinh-portfolio
+   ```
+
+2. **Cài đặt dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Chạy môi trường phát triển (Dev):**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build dự án (Production):**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📂 Cấu trúc thư mục
+
+```text
+src/
+├── components/   # Các thành phần dùng chung (Header, Toggle...)
+├── data/         # Dữ liệu trung tâm (resume.ts)
+├── hooks/        # Custom hooks (useTheme.ts)
+├── sections/     # Các phần chính của trang (Hero, About, Projects...)
+├── styles/       # CSS toàn cục và cấu hình Tailwind
+└── App.tsx       # Thành phần gốc của ứng dụng
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ✍️ Tùy chỉnh thông tin của bạn
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Bạn không cần sửa code giao diện để thay đổi nội dung. Chỉ cần mở file:
+`src/data/resume.ts`
+
+Và cập nhật các thông tin cá nhân của bạn vào đó. Trang web sẽ tự động cập nhật mọi thứ!
+
+---
+
+## 📄 Giấy phép
+
+Dự án này được cấp phép theo giấy phép MIT.
+
+---
+
+**Cảm ơn bạn đã ghé thăm Portfolio của tôi!** 
+Nếu bạn thấy dự án này thú vị, đừng quên tặng cho nó một ⭐ nhé! 
+Kết nối với tôi tại: [vinh7085@gmail.com](mailto:vinh7085@gmail.com)

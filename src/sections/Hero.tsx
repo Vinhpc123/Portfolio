@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
+import { ArrowDown, Download, MessageSquare, Terminal } from "lucide-react";
 import { resumeData } from "../data/resume";
 
 // ── Animation Variants ──────────────────────────────────────
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0a] px-4 transition-colors duration-500"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white dark:bg-[#0a0a0a] px-4 transition-colors duration-500 bg-grid"
     >
       {/* ── Glow Orbs ── */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -46,6 +46,25 @@ const Hero: React.FC = () => {
         <div className="absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-violet-600/10 dark:bg-violet-600/20 blur-[120px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-indigo-500/5 dark:bg-indigo-500/10 blur-[100px]" />
       </div>
+
+      {/* ── Floating Decoration (Nhân vật hoặc Icon hoạt họa) ── */}
+      <motion.div
+        animate={{
+          y: [0, -20, 0],
+          rotate: [0, 5, 0, -5, 0]
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="absolute bottom-20 right-[10%] opacity-20 dark:opacity-40 pointer-events-none hidden lg:block"
+      >
+        <div className="relative">
+          <Terminal size={120} className="text-blue-500" />
+          <div className="absolute -top-4 -right-4 h-8 w-8 rounded-full bg-blue-400 animate-ping" />
+        </div>
+      </motion.div>
 
       {/* ── Content ── */}
       <motion.div
@@ -87,8 +106,8 @@ const Hero: React.FC = () => {
           Building responsive & performant web experiences with{" "}
           <span className="text-blue-500">React</span>,{" "}
           <span className="text-indigo-500">TypeScript</span> &{" "}
-          <span className="text-violet-500">Node.js</span>. Based in{" "}
-          {resumeData.personal.location}.
+          <span className="text-violet-500">Node.js</span>{" "}
+          while evolving into a versatile Software Engineer.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -147,6 +166,16 @@ const Hero: React.FC = () => {
           <ArrowDown size={14} />
         </motion.div>
       </motion.div>
+
+      {/* ── Chat Button (Floating) ── */}
+      <motion.a
+        href="#contact"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-8 right-8 z-[60] flex h-14 w-14 items-center justify-center rounded-full bg-black dark:bg-white text-white dark:text-black shadow-2xl transition-colors duration-500"
+      >
+        <MessageSquare size={24} />
+      </motion.a>
     </section>
   );
 };
