@@ -77,12 +77,6 @@ Và cập nhật các thông tin cá nhân của bạn vào đó. Trang web sẽ
 
 ---
 
-## 📄 Giấy phép
-
-Dự án này được cấp phép theo giấy phép MIT.
-
----
-
 **Cảm ơn bạn đã ghé thăm Portfolio của tôi!** 
 Nếu bạn thấy dự án này thú vị, đừng quên tặng cho nó một ⭐ nhé! 
 Kết nối với tôi tại: [vinh7085@gmail.com](mailto:vinh7085@gmail.com)

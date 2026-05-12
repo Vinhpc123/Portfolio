@@ -102,6 +102,15 @@ export const resumeData: ResumeData = {
 
   projects: [
     {
+      name: "Modern Portfolio Website",
+      period: "Feb 2026 - Now",
+      role: "Front-end Developer",
+      description:
+        "Designed and developed a high-performance personal portfolio website showcasing projects and skills. Features include a sleek dark/light mode system, smooth scrolling animations using Framer Motion, and a fully responsive layout optimized for all devices.",
+      technologies: ["React 19", "Vite", "Tailwind CSS", "Framer Motion", "TypeScript"],
+      githubLink: "https://github.com/Vinhpc123/Portfolio.git",
+    },
+    {
       name: "Jewelry E-commerce & Management System",
       period: "Nov 2025 - Jan 2026",
       role: "Fullstack Developer",
@@ -132,5 +141,6 @@ export const resumeData: ResumeData = {
       technologies: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "Chart.js"],
       githubLink: "https://github.com/Vinhpc123/Watchshop.git",
     },
+
   ],
 };

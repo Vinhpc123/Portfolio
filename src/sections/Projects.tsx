@@ -59,7 +59,7 @@ const Projects: React.FC = () => {
               key={project.name}
               variants={cardVariants}
               whileHover={{ y: -10 }}
-              className="group relative flex flex-col justify-between rounded-3xl bg-white dark:bg-[#151515] border border-black/5 dark:border-white/5 p-8 transition-all duration-300 hover:border-black/20 dark:hover:border-white/20 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden"
+              className="group relative flex flex-col justify-between rounded-3xl bg-white dark:bg-[#151515] border border-black/5 dark:border-white/5 p-8 transition-all duration-300 hover:border-black/20 dark:hover:border-white/20 hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden h-full"
             >
               {/* Subtle hover overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-transparent to-purple-500/0 group-hover:from-blue-500/5 group-hover:to-purple-500/5 transition-colors duration-500 z-0 pointer-events-none" />
