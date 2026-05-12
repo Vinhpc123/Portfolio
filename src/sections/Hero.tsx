@@ -30,8 +30,8 @@ const Hero: React.FC = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/cv-tran-thanh-vinh.pdf";
-    link.download = "CV_TranThanhVinh.pdf";
+    link.href = "/CV_FE_ReactJS_TranThanhVinh.pdf";
+    link.download = "CV_FE_ReactJS_TranThanhVinh.pdf";
     link.click();
   };
 
