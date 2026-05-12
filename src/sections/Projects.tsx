@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Calendar, User } from "lucide-react";
+import { getIconForSkill, getColorForSkill } from "../data/icons";
 import { resumeData } from "../data/resume";
 
 // ── Animation Variants ──────────────────────────────────────
@@ -89,14 +90,20 @@ const Projects: React.FC = () => {
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-8">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-300 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full transition-colors duration-500"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                  {project.technologies.map((tech) => {
+                    const IconComponent = getIconForSkill(tech);
+                    const brandColor = getColorForSkill(tech);
+
+                    return (
+                      <span
+                        key={tech}
+                        className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-300 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full transition-all duration-300 hover:bg-white dark:hover:bg-[#1a1a1a]"
+                      >
+                        <IconComponent size={12} style={{ color: brandColor }} />
+                        {tech}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -146,3 +153,4 @@ const Projects: React.FC = () => {
 };
 
 export default Projects;
+

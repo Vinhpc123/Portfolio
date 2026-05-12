@@ -1,36 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Code2,
-  Database,
-  Server,
-  PenTool,
-  GitBranch,
-  Wrench,
-  Layout,
-  Globe,
-  Settings,
-  Cloud,
-  type LucideIcon,
-} from "lucide-react";
+import { getIconForSkill, getColorForSkill } from "../data/icons";
 import { resumeData } from "../data/resume";
-
-// ── Icon Mapping Helper ────────────────────────────────────
-// Lucide doesn't have brand icons (like React or Node logo),
-// so we use representative technical icons for each skill.
-const getIconForSkill = (skillName: string): LucideIcon => {
-  const name = skillName.toLowerCase();
-  if (name.includes("react") || name.includes("html") || name.includes("css") || name.includes("tailwind")) return Layout;
-  if (name.includes("typescript") || name.includes("javascript")) return Code2;
-  if (name.includes("node") || name.includes("express") || name.includes("php")) return Server;
-  if (name.includes("mongo") || name.includes("sql")) return Database;
-  if (name.includes("git")) return GitBranch;
-  if (name.includes("ui/ux") || name.includes("figma")) return PenTool;
-  if (name.includes("api") || name.includes("postman")) return Globe;
-  if (name.includes("jwt") || name.includes("auth")) return Settings;
-  if (name.includes("cloud") || name.includes("aws")) return Cloud;
-  return Wrench; // Default fallback
-};
 
 // ── Animation Variants ─────────────────────────────────────
 const containerVariants = {
@@ -98,6 +69,7 @@ const Skills: React.FC = () => {
               <div className="flex flex-wrap gap-3">
                 {group.skills.map((skill) => {
                   const IconComponent = getIconForSkill(skill);
+                  const brandColor = getColorForSkill(skill);
 
                   return (
                     <motion.div
@@ -105,13 +77,14 @@ const Skills: React.FC = () => {
                       variants={itemVariants}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="group flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#151515] border border-black/5 dark:border-white/5 rounded-full cursor-pointer transition-colors duration-300 hover:bg-blue-500/10 hover:border-blue-500/30"
+                      className="group flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-[#151515] border border-black/5 dark:border-white/5 rounded-full cursor-pointer transition-all duration-300 hover:bg-white dark:hover:bg-[#1a1a1a] hover:border-black/10 dark:hover:border-white/10 hover:shadow-lg hover:shadow-blue-500/5"
                     >
                       <IconComponent
                         size={16}
-                        className="text-gray-500 dark:text-gray-400 group-hover:text-blue-500 transition-colors"
+                        style={{ color: brandColor }}
+                        className="opacity-80 group-hover:opacity-100 transition-opacity"
                       />
-                      <span className="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-white transition-colors">
+                      <span className="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors">
                         {skill}
                       </span>
                     </motion.div>
