@@ -60,8 +60,8 @@ export const resumeData: ResumeData = {
   education: {
     school: "University of Transport and Communications Ho Chi Minh City (UTH)",
     period: "2022 - 2026",
-    major: "Information Technology (Web Development)",
-    gpa: "3.30 / 4.0",
+    major: "Information Technology",
+    gpa: "3.32 / 4.0",
   },
 
   skills: [
@@ -70,10 +70,10 @@ export const resumeData: ResumeData = {
       skills: [
         "React.js",
         "TypeScript",
+        "JavaScript",
         "HTML5",
         "CSS3",
         "TailwindCSS",
-        "UI/UX (Basic) - Figma",
       ],
     },
     {
@@ -84,7 +84,6 @@ export const resumeData: ResumeData = {
         "PHP",
         "MongoDB",
         "Mongoose",
-        "Microsoft SQL Server",
         "MySQL",
         "PostgreSQL",
       ],
@@ -92,10 +91,12 @@ export const resumeData: ResumeData = {
     {
       category: "Tools & Others",
       skills: [
-        "Git & GitHub workflow",
+        "Git/GitHub",
         "Postman",
-        "RESTful APIs",
-        "JWT Authentication",
+        "Figma",
+        "Vite",
+        "Cursor",
+        "Antigravity",
       ],
     },
   ],
